@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MyKnightOnlineAssistant
 {
@@ -44,7 +45,7 @@ namespace MyKnightOnlineAssistant
             else
             {
 
-                double pus, sonuc,coinsTutar;
+                double pus, sonuc, coinsTutar;
                 int gbTl, calcPus;
                 calcPus = Convert.ToInt32(tbxPus.Text);
                 pus = Convert.ToDouble(tbx400npoint.Text);
@@ -75,6 +76,87 @@ namespace MyKnightOnlineAssistant
             }
         }
 
-    
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cbxActivity.SelectedIndex = 0;
+        }
+
+
+        private void cbxActivity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxActivity.SelectedIndex == 0)
+            {
+                tbxExp.Focus();
+                lblMob.Text = "Dakikada Kesilen Mob Sayısı:";
+                tbxExp.Text = "";
+                tbxMob.Text = "";
+                tbxTotalExp.Text = "";
+                tbxMob.Enabled = true;
+            }
+            if (cbxActivity.SelectedIndex == 1)
+            {
+                tbxExp.Focus();
+                lblMob.Text = "Dakikada Kaç Defa Exp Alıyorsun:";
+                tbxExp.Text = "";
+                tbxMob.Text = " 4";
+                tbxTotalExp.Text = "";
+                tbxMob.Enabled = false;
+            }
+        }
+
+        private void btnExp_Click(object sender, EventArgs e)
+        {
+            if (cbxActivity.SelectedIndex == 0)
+            {
+                if (tbxExp.Text == "" && tbxMob.Text == "")
+                {
+                    MessageBox.Show("Lütfen Gerekli Alanları Doldurunuz.");
+                    tbxExp.Focus();
+                }
+                else if (tbxExp.Text == "")
+                {
+                    MessageBox.Show("Lütfen Gelen Exp Miktarını Yazınız.");
+                    tbxExp.Focus();
+                }
+                else if (tbxMob.Text == "")
+                {
+                    MessageBox.Show("Lütfen Dakikada Kesilen Mob Sayısını Yazınız.");
+                    tbxMob.Focus();
+                }
+                else
+                {
+                    ExpCalcMethod();
+                }
+
+            }
+            else
+            {
+                if (tbxExp.Text == "")
+                {
+                    MessageBox.Show("Lütfen Gelen Exp Miktarını Yazınız.");
+                    tbxExp.Focus();
+                }
+                else
+                {
+                    ExpCalcMethod();
+                }
+            }
+
+        }
+
+
+
+
+        private void ExpCalcMethod()
+        {
+            double totalExp = 0;
+            double exp, mob, daysExp;
+            exp = Convert.ToDouble(tbxExp.Text);
+            mob = Convert.ToDouble(tbxMob.Text);
+            daysExp = mob * 1440 * exp;
+            totalExp = daysExp;
+            tbxTotalExp.Text = totalExp.ToString("0,000");
+        }
+
     }
 }

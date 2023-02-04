@@ -38,7 +38,7 @@
             this.lblGb = new System.Windows.Forms.Label();
             this.tbx400npoint = new System.Windows.Forms.TextBox();
             this.lbl400npoint = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxTax = new System.Windows.Forms.GroupBox();
             this.btnTax = new System.Windows.Forms.Button();
             this.tbxNetCoins = new System.Windows.Forms.TextBox();
             this.lblNetCoins = new System.Windows.Forms.Label();
@@ -46,8 +46,19 @@
             this.lblTax = new System.Windows.Forms.Label();
             this.tbxSell = new System.Windows.Forms.TextBox();
             this.lblSellCoins = new System.Windows.Forms.Label();
+            this.gbxExp = new System.Windows.Forms.GroupBox();
+            this.btnExp = new System.Windows.Forms.Button();
+            this.tbxTotalExp = new System.Windows.Forms.TextBox();
+            this.lblTotalExp = new System.Windows.Forms.Label();
+            this.tbxMob = new System.Windows.Forms.TextBox();
+            this.lblMob = new System.Windows.Forms.Label();
+            this.tbxExp = new System.Windows.Forms.TextBox();
+            this.lblExp = new System.Windows.Forms.Label();
+            this.cbxActivity = new System.Windows.Forms.ComboBox();
+            this.lblActivity = new System.Windows.Forms.Label();
             this.gbxPus.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbxTax.SuspendLayout();
+            this.gbxExp.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxPus
@@ -153,22 +164,22 @@
             this.lbl400npoint.TabIndex = 0;
             this.lbl400npoint.Text = "400 NPOİNT TL KARŞILIĞI:";
             // 
-            // groupBox1
+            // gbxTax
             // 
-            this.groupBox1.Controls.Add(this.btnTax);
-            this.groupBox1.Controls.Add(this.tbxNetCoins);
-            this.groupBox1.Controls.Add(this.lblNetCoins);
-            this.groupBox1.Controls.Add(this.tbxTax);
-            this.groupBox1.Controls.Add(this.lblTax);
-            this.groupBox1.Controls.Add(this.tbxSell);
-            this.groupBox1.Controls.Add(this.lblSellCoins);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 244);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 198);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "PAZAR VERGİ HESAPLAYICI";
+            this.gbxTax.Controls.Add(this.btnTax);
+            this.gbxTax.Controls.Add(this.tbxNetCoins);
+            this.gbxTax.Controls.Add(this.lblNetCoins);
+            this.gbxTax.Controls.Add(this.tbxTax);
+            this.gbxTax.Controls.Add(this.lblTax);
+            this.gbxTax.Controls.Add(this.tbxSell);
+            this.gbxTax.Controls.Add(this.lblSellCoins);
+            this.gbxTax.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbxTax.Location = new System.Drawing.Point(12, 244);
+            this.gbxTax.Name = "gbxTax";
+            this.gbxTax.Size = new System.Drawing.Size(318, 198);
+            this.gbxTax.TabIndex = 1;
+            this.gbxTax.TabStop = false;
+            this.gbxTax.Text = "PAZAR VERGİ HESAPLAYICI";
             // 
             // btnTax
             // 
@@ -234,19 +245,127 @@
             this.lblSellCoins.TabIndex = 0;
             this.lblSellCoins.Text = "SATMAK İSTEDİĞİNİZ FİYAT:";
             // 
+            // gbxExp
+            // 
+            this.gbxExp.Controls.Add(this.btnExp);
+            this.gbxExp.Controls.Add(this.tbxTotalExp);
+            this.gbxExp.Controls.Add(this.lblTotalExp);
+            this.gbxExp.Controls.Add(this.tbxMob);
+            this.gbxExp.Controls.Add(this.lblMob);
+            this.gbxExp.Controls.Add(this.tbxExp);
+            this.gbxExp.Controls.Add(this.lblExp);
+            this.gbxExp.Controls.Add(this.cbxActivity);
+            this.gbxExp.Controls.Add(this.lblActivity);
+            this.gbxExp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.gbxExp.Location = new System.Drawing.Point(12, 448);
+            this.gbxExp.Name = "gbxExp";
+            this.gbxExp.Size = new System.Drawing.Size(318, 240);
+            this.gbxExp.TabIndex = 4;
+            this.gbxExp.TabStop = false;
+            this.gbxExp.Text = "EXP HESAPLAYICI";
+            // 
+            // btnExp
+            // 
+            this.btnExp.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnExp.Location = new System.Drawing.Point(202, 201);
+            this.btnExp.Name = "btnExp";
+            this.btnExp.Size = new System.Drawing.Size(100, 33);
+            this.btnExp.TabIndex = 336;
+            this.btnExp.Text = "Hesapla";
+            this.btnExp.UseVisualStyleBackColor = true;
+            this.btnExp.Click += new System.EventHandler(this.btnExp_Click);
+            // 
+            // tbxTotalExp
+            // 
+            this.tbxTotalExp.Enabled = false;
+            this.tbxTotalExp.Location = new System.Drawing.Point(202, 159);
+            this.tbxTotalExp.Name = "tbxTotalExp";
+            this.tbxTotalExp.Size = new System.Drawing.Size(100, 29);
+            this.tbxTotalExp.TabIndex = 10;
+            // 
+            // lblTotalExp
+            // 
+            this.lblTotalExp.AutoSize = true;
+            this.lblTotalExp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalExp.Location = new System.Drawing.Point(13, 162);
+            this.lblTotalExp.Name = "lblTotalExp";
+            this.lblTotalExp.Size = new System.Drawing.Size(175, 20);
+            this.lblTotalExp.TabIndex = 9;
+            this.lblTotalExp.Text = "24 SAATTE GELECEK EXP:";
+            // 
+            // tbxMob
+            // 
+            this.tbxMob.Location = new System.Drawing.Point(202, 118);
+            this.tbxMob.Name = "tbxMob";
+            this.tbxMob.Size = new System.Drawing.Size(100, 29);
+            this.tbxMob.TabIndex = 8;
+            // 
+            // lblMob
+            // 
+            this.lblMob.AutoSize = true;
+            this.lblMob.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMob.Location = new System.Drawing.Point(13, 122);
+            this.lblMob.Name = "lblMob";
+            this.lblMob.Size = new System.Drawing.Size(182, 20);
+            this.lblMob.TabIndex = 7;
+            this.lblMob.Text = "DAKİKADA KESİLEN MOB:";
+            // 
+            // tbxExp
+            // 
+            this.tbxExp.Location = new System.Drawing.Point(202, 77);
+            this.tbxExp.Name = "tbxExp";
+            this.tbxExp.Size = new System.Drawing.Size(100, 29);
+            this.tbxExp.TabIndex = 6;
+            // 
+            // lblExp
+            // 
+            this.lblExp.AutoSize = true;
+            this.lblExp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblExp.Location = new System.Drawing.Point(13, 81);
+            this.lblExp.Name = "lblExp";
+            this.lblExp.Size = new System.Drawing.Size(85, 20);
+            this.lblExp.TabIndex = 5;
+            this.lblExp.Text = "GELEN EXP:";
+            // 
+            // cbxActivity
+            // 
+            this.cbxActivity.FormattingEnabled = true;
+            this.cbxActivity.Items.AddRange(new object[] {
+            "EXP PARTY",
+            "OTURMAK"});
+            this.cbxActivity.Location = new System.Drawing.Point(181, 31);
+            this.cbxActivity.Name = "cbxActivity";
+            this.cbxActivity.Size = new System.Drawing.Size(121, 29);
+            this.cbxActivity.TabIndex = 4;
+            this.cbxActivity.SelectedIndexChanged += new System.EventHandler(this.cbxActivity_SelectedIndexChanged);
+            // 
+            // lblActivity
+            // 
+            this.lblActivity.AutoSize = true;
+            this.lblActivity.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblActivity.Location = new System.Drawing.Point(13, 35);
+            this.lblActivity.Name = "lblActivity";
+            this.lblActivity.Size = new System.Drawing.Size(72, 20);
+            this.lblActivity.TabIndex = 3;
+            this.lblActivity.Text = "AKTİVİTE:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 700);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbxExp);
+            this.Controls.Add(this.gbxTax);
             this.Controls.Add(this.gbxPus);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxPus.ResumeLayout(false);
             this.gbxPus.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxTax.ResumeLayout(false);
+            this.gbxTax.PerformLayout();
+            this.gbxExp.ResumeLayout(false);
+            this.gbxExp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -263,7 +382,7 @@
         private System.Windows.Forms.TextBox tbx400npoint;
         private System.Windows.Forms.Label lbl400npoint;
         private System.Windows.Forms.Button btnPus;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxTax;
         private System.Windows.Forms.Button btnTax;
         private System.Windows.Forms.TextBox tbxNetCoins;
         private System.Windows.Forms.Label lblNetCoins;
@@ -271,6 +390,16 @@
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.TextBox tbxSell;
         private System.Windows.Forms.Label lblSellCoins;
+        private System.Windows.Forms.GroupBox gbxExp;
+        private System.Windows.Forms.Button btnExp;
+        private System.Windows.Forms.TextBox tbxTotalExp;
+        private System.Windows.Forms.Label lblTotalExp;
+        private System.Windows.Forms.TextBox tbxMob;
+        private System.Windows.Forms.Label lblMob;
+        private System.Windows.Forms.TextBox tbxExp;
+        private System.Windows.Forms.Label lblExp;
+        private System.Windows.Forms.ComboBox cbxActivity;
+        private System.Windows.Forms.Label lblActivity;
     }
 }
 
