@@ -56,5 +56,25 @@ namespace MyKnightOnlineAssistant
             }
 
         }
+
+        private void btnTax_Click(object sender, EventArgs e)
+        {
+            if (tbxSell.Text == "")
+            {
+                MessageBox.Show("Lütfen Satmak İstediğiniz Tutarı Giriniz.");
+                tbxSell.Focus();
+            }
+            else
+            {
+                double coin, vergi, sonuc;
+                coin = Convert.ToDouble(tbxSell.Text);
+                vergi = coin * 0.03;
+                tbxTax.Text = vergi.ToString("0,000").Replace(".", ",");
+                sonuc = coin - vergi;
+                tbxNetCoins.Text = sonuc.ToString("0,000").Replace(".", ",");
+            }
+        }
+
+    
     }
 }
