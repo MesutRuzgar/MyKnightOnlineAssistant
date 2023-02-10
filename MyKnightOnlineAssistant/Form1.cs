@@ -150,13 +150,25 @@ namespace MyKnightOnlineAssistant
         private void ExpCalcMethod()
         {
             double totalExp = 0;
-            double exp, mob, daysExp;
+            double lvlExp,exp, mob, daysExp,daysYuzde,hourYuzde;
             exp = Convert.ToDouble(tbxExp.Text);
             mob = Convert.ToDouble(tbxMob.Text);
-            daysExp = mob * 1440 * exp;
+            lvlExp = Convert.ToDouble(tbxLvlExp.Text);
+            daysExp = mob * 1440 * exp;            
             totalExp = daysExp;
             tbxTotalExp.Text = totalExp.ToString("0,000");
+            //24 saatte % kaç exp alıcaz
+            daysYuzde = daysExp * 100 / lvlExp;
+            tbxTotalExpYuzde.Text = daysYuzde.ToString("00.##") +" %";
+            //saatlik % kaç exp alıcaz
+            hourYuzde =(totalExp/24)*100/lvlExp;
+            tbxSaatlikExp.Text = hourYuzde.ToString("00.##") + " %";
+
         }
 
     }
 }
+//100   1596
+//x     xacaca
+//4317589248
+
